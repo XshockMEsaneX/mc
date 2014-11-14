@@ -3,19 +3,21 @@
 <div class="row">
   <div class="large-12 columns">
     <div class="nav-bar right">
-     <ul class="button-group">
-       <li><a href="#" class="button">Link 1</a></li>
-       <li><a href="#" class="button">Link 2</a></li>
-       <li><a href="#" class="button">Link 3</a></li>
-       <li><a href="#" class="button">Link 4</a></li>
-     </ul>
+      <?php wp_nav_menu( array(
+          'menu_class'  => 'button-group',
+        
+      ) ); ?>
    </div>
-   <h1>Blog <small>This is my blog. It's awesome.</small></h1>
+
+   <h1><?php bloginfo( 'name' ); ?></h1>
+   <h1><small><?php bloginfo( 'description' ); ?></small></h1>
    <hr/>
  </div>
 </div>
 
 <div class="row">
+
+  <div class="large-9 columns" role="content">
 
   <?php if ( have_posts() ) : ?>
   
@@ -27,7 +29,15 @@
 
   <?php endif; ?>
 
+  </div>
+
+<aside class="large-3 columns">
+
 <?php get_sidebar(); ?>
+
+</aside>
+
+  </div>
 
 </div>
 

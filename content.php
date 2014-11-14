@@ -1,26 +1,16 @@
-  <div class="large-9 columns" role="content">
+<article class="<?php post_class(); ?>">
 
-    <article>
+  <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+  <h6>Written by <a href="<?php the_author_link(); ?>"><?php the_author(); ?></a> on <?php the_date() ?>.</h6>
 
-      <h3><a href="#">Blog Post Title</a></h3>
-      <h6>Written by <a href="#">John Smith</a> on August 12, 2012.</h6>
 
-      <div class="row">
-        <div class="large-6 columns">
-          <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa.</p>
-          <p>Boudin aliqua adipisicing rump corned beef. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
-        </div>
-        <div class="large-6 columns">
-          <img src="http://placehold.it/400x240&text=[img]"/>
-        </div>
-      </div>
+    <?php echo apply_filters('the_content', $post->post_content); ?>
+    <?php if ( has_post_thumbnail() ) : ?>
+      <img src="http://placehold.it/400x240&text=[img]"/>
+    <?php endif; ?>
+    <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+      <?php the_post_thumbnail(); ?>
+    </a>
+  </article>
 
-      <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
-
-      <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
-
-    </article>
-
-    <hr/>
-
-  </div>
+  <hr/>
